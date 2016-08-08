@@ -42,10 +42,52 @@
 // var degree = parseFloat(prompt("Enter a degree to be converted to fahrenheit: "));
 //
 // alert("The temp is converted " + convert(degree) + "degrees fahrenheit");
+// var convert = function(gallons) {return (gallons*4);};
+// var reconvert = function(cups) {return (cups*8);};
+// var gallons = parseInt(prompt("Enter an amount of gallons: "));
+// var cups = parseInt(prompt("Enter an amount of cups: "));
+//
+// alert("Amount of liters in your gallons: " + convert(gallons) + "amount of ounces in your cups: " + reconvert(cups));
+//
+// $(Document).ready(function(){
+//   jQuery("h1").click(function() {
+//     alert("This is a header.");
+//   });
+//
+//   $("p").click(function() {
+//     alert("This is a Paragraph.");
+//   });
+//   $("img").click(function() {
+//     alert("This is an image.");
+//   });
+// });
 
-var convert = function(gallons) {return (gallons*4);};
-var reconvert = function(cups) {return (cups*8);};
-var gallons = parseInt(prompt("Enter an amount of gallons: "));
-var cups = parseInt(prompt("Enter an amount of cups: "));
+//var sentence = function(input);
+function reverses(s) {
+  var o = '';
+  for (var i = s.length - 1; i >= 0; i--)
+    o += s[i];
+  return o;
+}
+var sentence = prompt("Enter a sentence: ");
 
-alert("Amount of liters in your gallons: " + convert(gallons) + "amount of ounces in your cups: " + reconvert(cups));
+var firstlast = function(sentence){
+  return sentence.charAt(0).toUpperCase() + sentence.charAt(sentence.length-1).toUpperCase()
+};
+
+var reverse = function(x) {
+  return x.charAt(1) + x.charAt(0);
+};
+
+var letterreverse = function(sentence){
+  return sentence + reverse(firstlast(sentence))
+};
+
+var middleletter = function(sentence){
+  return sentence.charAt(sentence.length/2) + letterreverse(sentence)
+};
+//var letter = sentence.charAt(count.toPrecision(1));
+console.log(middleletter(sentence));
+
+alert(reverses(middleletter(sentence)));
+//var final = (letter + " " + sentence + " " + reverse);
